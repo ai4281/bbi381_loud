@@ -1,0 +1,134 @@
+  <div layout="column" ng-controller="AppCtrl">
+
+    <md-toolbar layout="row">
+      <button ng-mousedown="toggleSidenav('left')" class="menuBtn">
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <h1 class="md-toolbar-tools" layout-align-gt-sm="center">BEEP BOOP ISLAND</h1>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+
+          <md-toolbar class="md-theme-light">
+             <button ng-mousedown="toggleSidenav('left')" class="menuBtn">
+              <span class="visually-hidden">Menu</span>
+            </button>
+          </md-toolbar>
+
+
+          <!-- sliders -->
+          <div flex class="controls" id="sideBar">
+          
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span>Beep</span>
+              </div>
+
+              <md-slider flex min="1" max="800" ng-model="color.red" aria-label="red" id="red-slider" class ng-change="setBass()">
+              </md-slider>
+
+              <div flex="25" layout layout-align="center center">
+                <input type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider" id="xScale">
+              </div>
+            </div>
+
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span>Boop</span>
+              </div>
+
+              <md-slider flex min="1" max="500" ng-model="color.green" aria-label="green" id="green-slider" class>
+              </md-slider>
+
+              <div flex="25" layout layout-align="center center">
+                <input type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider" id="yScale">
+              </div>
+            </div>
+
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span>Bop</span>
+              </div>
+
+              <md-slider flex min="1" max="360" ng-model="color.yAngle" aria-label="yAngle" id="yAngle-slider" class>
+              </md-slider>
+
+              <div flex="25" layout layout-align="center center">
+                <input type="number" ng-model="color.yAngle" aria-label="yAngle" aria-controls="yAngle-slider" placeholder="1" ng-init="color.yAngle=100" id="yAngle">
+              </div>
+            </div>
+
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span>Tempo</span>
+              </div>
+
+              <md-slider flex min="10" max="300" ng-model="color.blue" aria-label="blue" id="blue-slider" class ng-change="changeTempo()" >
+              </md-slider>
+
+              <div flex="25" layout layout-align="center center">
+                <input type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider" placeholder="1" id="zScale" ng-change="changeTempo()">
+              </div>
+            </div>
+
+
+
+            <div layout>
+              <div flex="20" layout layout-align="center center">
+                <span>FOV</span>
+              </div>
+
+              <md-slider flex min="1" max="360" ng-model="color.zAngle" aria-label="zAngle" id="zAngle-slider" class>
+              </md-slider>
+
+              <div flex="25" layout layout-align="center center">
+                <input type="number" ng-model="color.zAngle" aria-label="zAngle" aria-controls="zAngle-slider" placeholder="1" id="zAngle">
+              </div>
+            </div>
+
+            <md-switch ng-model="color.terrain" aria-label="Switch 1" layout-align="center center" ng-change="terrainSwitch()">
+              Dancing Terrain
+            </md-switch>
+
+            <md-switch ng-model="color.tree" aria-label="Switch 2" layout-align="center center" ng-change="treeSwitch()">
+              Dancing Trees&nbsp;&nbsp;
+            </md-switch>
+
+            <!-- shape selector -->
+<!--             <div id='selector'>
+              <md-select placeholder="Pick" ng-model="someVal" ng-init="someVal=0">
+                <md-option value="0">Cube</md-option>
+                <md-option value="1">Cylinder</md-option>
+                <md-option value="2">Torus</md-option>
+                <md-option value="3">Sphere</md-option>
+              </md-select>
+              <md-button ng-click="selected=true">Select Shape</md-button>
+            </div> -->
+
+            <section layout="column" layout-align="center center" class="saveLoad">
+              <div id="save">
+                <md-button class="md-raised md-primary" ng-click="saveSettings()">Save Settings</md-button>
+              </div>
+              <div id="load">
+                <md-button class="md-raised" ng-click="loadSettings()">Load Settings</md-button>
+              </div>
+              <HR WIDTH="100%" ALIGN="center">
+              <div id="backToIntro">
+                <a href="#/intro"><md-button class="md-raised md-primary">Back to start</md-button></a>
+              </div>
+            </section>
+
+
+          
+          </div>
+
+        </md-sidenav>
+<!--         <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+            <md-content>
+
+            </md-content>
+        </div> -->
+
+    </div>
+</div>
