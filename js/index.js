@@ -102,7 +102,7 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
       blue: data.blue,
       zAngle: data.fov,
       yAngle: data.bop,
-      terrain: false,
+      terrain: true,
       tree: true
   }
 
