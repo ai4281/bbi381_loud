@@ -65,7 +65,7 @@ function setBPM(number)
 {
 	timbre.bpm = number;
 
-	nullIntervals();
+	//nullIntervals();
 	setupIntervals();
 }
 
