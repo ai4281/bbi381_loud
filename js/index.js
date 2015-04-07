@@ -105,6 +105,8 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
       terrain: true,
       tree: true
   }
+  
+  terrainDanceBool = true;
 
 
   bassFreq = $scope.color.red;
